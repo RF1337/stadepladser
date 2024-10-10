@@ -1,0 +1,5 @@
+.scroll-container {
+    display: flex; /* Makes content flow horizontally */
+    overflow-x: hidden; /* Hide default horizontal scrollbar */
+    width: fit-content; /* Or any value that exceeds the viewport */
+}
