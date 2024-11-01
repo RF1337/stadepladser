@@ -1,0 +1,8 @@
+<div *ngIf="visible" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    <div class="bg-white rounded-lg p-6 max-w-md w-full shadow-lg">
+        <h2 class="text-xl font-bold mb-2">{{ title }}</h2>
+        <p class="mb-4">{{ description }}</p>
+        <p class="italic text-gray-700">{{ example }}</p>
+        <button (click)="closePopup()" class="mt-4 bg-blue-500 text-white rounded px-4 py-2">Close</button>
+    </div>
+</div>

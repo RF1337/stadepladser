@@ -1,0 +1,134 @@
+<!-- Conditionally render the first form (Category Selection) -->
+<div *ngIf="showCategoryForm">
+    <!-- First Form: Category Selection -->
+    <form (submit)="onSubmitCategory($event)"
+        class="space-y-4 p-4 rounded-lg border bg-white w-full sm:w-[400px] font-semibold">
+        <div class="flex justify-end">
+            <button type="button" (click)="closeForm()">
+                <img src="assets/icons/arrow-left.svg" alt="Go back">
+            </button>
+        </div>
+        <div class="space-y-4">
+            <label for="" class="flex justify-center">Kategori</label>
+            <div class="grid grid-cols-6 gap-2">
+                <button type="button" class="w-full h-12 bg-blue-300 rounded flex justify-center items-center">
+                    <img src="assets/categories/fish.svg" alt="">
+                </button>
+                <button type="button" class="w-full h-12 bg-blue-300 rounded flex justify-center items-center">
+                    <img src="assets/categories/fish.svg" alt="">
+                </button>
+                <button type="button" class="w-full h-12 bg-blue-300 rounded flex justify-center items-center">
+                    <img src="assets/categories/fish.svg" alt="">
+                </button>
+                <button type="button" class="w-full h-12 bg-blue-300 rounded flex justify-center items-center">
+                    <img src="assets/categories/fish.svg" alt="">
+                </button>
+                <button type="button" class="w-full h-12 bg-blue-300 rounded flex justify-center items-center">
+                    <img src="assets/categories/fish.svg" alt="">
+                </button>
+                <button type="button" class="w-full h-12 bg-blue-300 rounded flex justify-center items-center">
+                    <img src="assets/categories/fish.svg" alt="">
+                </button>
+                <button type="button" class="w-full h-12 bg-blue-300 rounded flex justify-center items-center">
+                    <img src="assets/categories/fish.svg" alt="">
+                </button>
+                <button type="button" class="w-full h-12 bg-blue-300 rounded flex justify-center items-center">
+                    <img src="assets/categories/fish.svg" alt="">
+                </button>
+                <button type="button" class="w-full h-12 bg-blue-300 rounded flex justify-center items-center">
+                    <img src="assets/categories/fish.svg" alt="">
+                </button>
+                <button type="button" class="w-full h-12 bg-blue-300 rounded flex justify-center items-center">
+                    <img src="assets/categories/fish.svg" alt="">
+                </button>
+                <button type="button" class="w-full h-12 bg-blue-300 rounded flex justify-center items-center">
+                    <img src="assets/categories/fish.svg" alt="">
+                </button>
+                <button type="button" class="w-full h-12 bg-blue-300 rounded flex justify-center items-center">
+                    <img src="assets/categories/fish.svg" alt="">
+                </button>
+                <button type="button" class="w-full h-12 bg-blue-300 rounded flex justify-center items-center">
+                    <img src="assets/categories/fish.svg" alt="">
+                </button>
+                <button type="button" class="w-full h-12 bg-blue-300 rounded flex justify-center items-center">
+                    <img src="assets/categories/fish.svg" alt="">
+                </button>
+                <button type="button" class="w-full h-12 bg-blue-300 rounded flex justify-center items-center">
+                    <img src="assets/categories/fish.svg" alt="">
+                </button>
+                <button type="button" class="w-full h-12 bg-blue-300 rounded flex justify-center items-center">
+                    <img src="assets/categories/fish.svg" alt="">
+                </button>
+                <button type="button" class="w-full h-12 bg-blue-300 rounded flex justify-center items-center">
+                    <img src="assets/categories/fish.svg" alt="">
+                </button>
+                <button type="button" class="w-full h-12 bg-blue-300 rounded flex justify-center items-center">
+                    <img src="assets/categories/fish.svg" alt="">
+                </button>
+            </div>
+        </div>
+
+        <div class="space-y-4">
+            <label class="flex justify-center">Strøm</label>
+            <div class="flex text-white justify-center space-x-5">
+                <button type="button" (click)="categoryData.strom = 'Ja'"
+                    class="bg-green-500 p-4 px-12 rounded">Ja</button>
+                <button type="button" (click)="categoryData.strom = 'Nej'"
+                    class="bg-red-500 p-4 px-12 rounded">Nej</button>
+            </div>
+        </div>
+
+        <div class="space-y-4">
+            <label for="pavilloner" class="flex justify-center">Pavilloner</label>
+            <select id="pavilloner" name="pavilloner" required
+                class="w-full p-2 border rounded bg-gray-300 font-normal">
+                <option>0 pavilloner</option>
+                <option>1 pavillon</option>
+                <option>2 pavilloner</option>
+                <option>3 pavilloner</option>
+            </select>
+        </div>
+
+        <div class="space-y-4">
+            <label for="fritekst" class="flex justify-center">Fritekst</label>
+            <textarea id="fritekst" name="fritekst" class="w-full p-2 border rounded bg-gray-300" rows="4"></textarea>
+        </div>
+
+        <div class="flex justify-center items-center space-x-2">
+            <label class="block">Pris:</label>
+            <span class="block">{{ categoryData.price }} DKK</span>
+        </div>
+
+        <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded">Næste</button>
+    </form>
+</div>
+
+<!-- Conditionally render the second form (Company Details) -->
+<div *ngIf="!showCategoryForm">
+    <!-- Second Form: Company Details -->
+    <form (submit)="onSubmitCredentials($event)"
+        class="space-y-4 p-4 rounded-lg border bg-white w-full sm:w-[400px] font-semibold">
+        <div>
+            <label for="firmName" class="block">Firmanavn</label>
+            <input type="text" id="firmName" name="firmName" required class="w-full p-2 border rounded bg-gray-300">
+        </div>
+        <div>
+            <label for="cvr" class="block">CVR</label>
+            <input type="text" id="cvr" name="cvr" class="w-full p-2 border rounded bg-gray-300">
+        </div>
+        <div>
+            <label for="name" class="block">Dit navn</label>
+            <input type="text" id="name" name="name" required class="w-full p-2 border rounded bg-gray-300">
+        </div>
+        <div>
+            <label for="email" class="block">E-mail</label>
+            <input type="email" id="email" name="email" class="w-full p-2 border rounded bg-gray-300">
+        </div>
+        <div>
+            <label for="phone" class="block">Telefonnummer</label>
+            <input type="tel" id="phone" name="phone" required class="w-full p-2 border rounded bg-gray-300">
+        </div>
+
+        <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded">Send</button>
+    </form>
+</div>

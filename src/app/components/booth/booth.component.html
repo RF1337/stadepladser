@@ -1,0 +1,11 @@
+<!--<div (click)="onBoothClick()" class="booth cursor-pointer h-24 w-24 bg-white">
+    Booth
+</div>-->
+
+<div class="booth w-10 h-10 rounded flex items-center justify-center text-white font-bold"
+    [ngStyle]="{ 'left.px': x, 'top.px': y }" [ngClass]="{
+      'bg-green-500': status === 'available',
+      'bg-red-500': status === 'reserved'
+    }">
+    {{ id }}
+</div>

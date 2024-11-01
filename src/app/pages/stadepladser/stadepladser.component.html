@@ -1,8 +1,8 @@
-<app-map class="absolute -z-10"></app-map>
+<!-- Map as the background -->
+<app-map class="absolute"></app-map>
 
 <div class="relative h-screen z-10">
-    <app-category-filter class="fixed top-0 w-full"></app-category-filter>
-    <app-booth-availability class="fixed bottom-0 left-0 w-fit p-10"></app-booth-availability>
+    <app-booth class="fixed bottom-4 right-4 w-52 h-40 rounded-lg"></app-booth>
+    <app-category-filter class="fixed top-0 w-full z-20"></app-category-filter>
+    <app-booth-availability class="fixed bottom-0 left-0 w-fit p-10 z-20"></app-booth-availability>
 </div>
-
-<app-form></app-form>

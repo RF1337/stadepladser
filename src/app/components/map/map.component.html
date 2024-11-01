@@ -1,3 +1,7 @@
-<div class="h-[100vh] overflow-auto scroll-container">
-    <img src="assets/map.webp" alt="Kort over algade" class="max-h-full max-w-none">
+<div class="h-[100vh] overflow-auto scroll-container relative">
+    <img src="assets/map.webp" alt="Map Image" class="max-h-full max-w-none">
+
+    <!-- Render only filtered booths on top of the image -->
+    <app-booth *ngFor="let booth of filteredBooths" [id]="booth.id" [x]="booth.x" [y]="booth.y" [status]="booth.status">
+    </app-booth>
 </div>
